@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "erm-yarp", "erm-yarp.csproj", "{743331C4-3D08-4CB4-B0B7-7BD0039A91FA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{743331C4-3D08-4CB4-B0B7-7BD0039A91FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743331C4-3D08-4CB4-B0B7-7BD0039A91FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743331C4-3D08-4CB4-B0B7-7BD0039A91FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{743331C4-3D08-4CB4-B0B7-7BD0039A91FA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57842D18-5304-435F-8D47-D26CFF3E5D1B}
+	EndGlobalSection
+EndGlobal
