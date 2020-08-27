@@ -5,6 +5,6 @@
     <RootNamespace>erm_yarp</RootNamespace>
   </PropertyGroup>
   <ItemGroup> 
-    <PackageReference Include="Microsoft.ReverseProxy" Version="1.0.0-preview.3.20371.4" />
+    <PackageReference Include="Microsoft.ReverseProxy" Version="1.0.0-preview.4.20424.2" />
     </ItemGroup> 
 </Project>
