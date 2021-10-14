@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using erm_yarp.PgConfig;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Yarp.ReverseProxy.Configuration;
 
 namespace erm_yarp
 {
@@ -23,8 +25,29 @@ namespace erm_yarp
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddReverseProxy()
-          .LoadFromConfig(Configuration.GetSection("ReverseProxy"));
+            var routes = new[]   
+                {
+                    new RouteConfig()
+                    {
+                        RouteId = "route1",
+                        ClusterId = "cluster1",
+                        Match = new RouteMatch { Path = "{**catch-all}"} 
+                    } 
+                };
+
+            var clusters = new[]
+                {
+                    new ClusterConfig()
+                    {
+                        ClusterId = "cluster1",
+                        Destinations = new Dictionary<string, DestinationConfig>(StringComparer.OrdinalIgnoreCase)
+                        {
+                            { "destination1", new DestinationConfig() { Address = "https://example.com" } }
+                        }
+                    }
+                };
+
+            services.AddReverseProxy().LoadFromMemory(routes, clusters);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
